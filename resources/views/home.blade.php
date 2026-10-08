@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    @if (Auth::user()->isAdmin())
+                        {{ __('You are an admin') }}
+                    @else
+                        {{ __('You are not an admin') }}
+                    @endif
                 </div>
             </div>
         </div>
